@@ -57,10 +57,10 @@ for (let index = 0; index < seats.length; index++) {
         seat.setAttribute("disabled", true);
         let newSeatCount = parseInt(document.getElementById("seat-count").innerText);
         const purchaseBtn = document.getElementById("purchaseBtn");
-        if(39 >= newSeatCount){
+        if (39 >= newSeatCount) {
             purchaseBtn.removeAttribute("disabled")
         }
-        if(36 >= newSeatCount){
+        if (36 >= newSeatCount) {
             alert("you have parchased max amount of seat")
             document.getElementById("seatContainer").classList.add("hidden")
         }
@@ -70,23 +70,26 @@ const coupon = document.getElementById("CouponApplyBtn");
 coupon.addEventListener("click", function () {
     const CouponInputField = document.getElementById("CouponInputField");
     // const CouponInputFieldValue = CouponInputField.value
-    if (CouponInputField.value === "NEW15") {
-        const grandTotalSpan = document.getElementById("grandTotal");
-        const grandTotalSpanNum = parseFloat(grandTotalSpan.innerText);
-        const discountedPrice = grandTotalSpanNum * 15 / 100;
-        const newGrandTotalSpan = grandTotalSpanNum - discountedPrice;
-        grandTotalSpan.innerText = newGrandTotalSpan.toString();
-        console.log(grandTotalSpan);
-        const CouponContainer = document.getElementById("CouponContainer").classList.add("hidden")
-    }
-    if (CouponInputField.value === "Couple 20") {
-        const grandTotalSpan = document.getElementById("grandTotal");
-        const grandTotalSpanNum = parseFloat(grandTotalSpan.innerText);
-        const discountedPrice = grandTotalSpanNum * 20 / 100;
-        const newGrandTotalSpan = grandTotalSpanNum - discountedPrice;
-        grandTotalSpan.innerText = newGrandTotalSpan.toString();
-        console.log(grandTotalSpan);
-        const CouponContainer = document.getElementById("CouponContainer").classList.add("hidden")
+    let newSeatCount = parseInt(document.getElementById("seat-count").innerText);
+    if (36 >= newSeatCount) {
+        if (CouponInputField.value === "NEW15") {
+            const grandTotalSpan = document.getElementById("grandTotal");
+            const grandTotalSpanNum = parseFloat(grandTotalSpan.innerText);
+            const discountedPrice = grandTotalSpanNum * 15 / 100;
+            const newGrandTotalSpan = grandTotalSpanNum - discountedPrice;
+            grandTotalSpan.innerText = newGrandTotalSpan.toString();
+            console.log(grandTotalSpan);
+            const CouponContainer = document.getElementById("CouponContainer").classList.add("hidden")
+        }
+        if (CouponInputField.value === "Couple 20") {
+            const grandTotalSpan = document.getElementById("grandTotal");
+            const grandTotalSpanNum = parseFloat(grandTotalSpan.innerText);
+            const discountedPrice = grandTotalSpanNum * 20 / 100;
+            const newGrandTotalSpan = grandTotalSpanNum - discountedPrice;
+            grandTotalSpan.innerText = newGrandTotalSpan.toString();
+            console.log(grandTotalSpan);
+            const CouponContainer = document.getElementById("CouponContainer").classList.add("hidden")
+        }
     }
 })
 const newSeatCount = parseInt(document.getElementById("seat-count").innerText);
